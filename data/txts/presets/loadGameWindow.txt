@@ -1,0 +1,4 @@
+400 600 
+# button 60 120 80 50 addWindow no 
+button 100 100 80 50 deleteSelf no 
+carrier 0 0 50 30 carrier no 

@@ -1,0 +1,4 @@
+full full 
+button 210 160 80 50 deleteSelfAddObjectButton rufus 
+button 210 220 80 50 addWindow optionsMenu 
+button 210 280 80 50 optionsButton no 

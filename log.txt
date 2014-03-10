@@ -1,0 +1,38 @@
+BeholderJackGui
+
+***Alpha***
+
+A.1.1.1
+	_New:
+	Contains items, that can be carried and combined.
+	Buttons are items that can be pressed to cause an action.
+	Windows are items that can have children. All window data is stored in text files.
+	Supports animation.
+	Supports audio.
+	_Fixes.
+	_Bugs.
+
+A.1.1.2
+	_New.
+	_Fixes:
+	Drawing system changed for better performance and stability
+	_Bugs.
+
+A.1.1.3
+	_New.
+	_Fixes:
+	Improved children system. Now has parent links and more stable.
+	_Bugs.
+	
+A.1.1.4
+	_New.
+	_Fixes:
+	Improved code style.
+	_Bugs:
+	Can play only one sound at a time.
+	Animation speed depends on performance and not time.
+	_Todo:
+	Input fields.
+	Pop up fields.
+	Saving and loading whole configuration into txts.
+	
