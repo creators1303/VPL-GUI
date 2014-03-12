@@ -4,7 +4,6 @@ from data.classes.window import WindowObj
 from data.classes.objects.item import Item
 
 
-
 def load_preset(name):
     print('Loading:',name)
     try:
@@ -45,6 +44,7 @@ def create_window(wind,name):
                 counter+=1
             if ob_class=='button':
                 object=ButtonObj(wind.give_table(),coor,size)
+                object.dis_text=prop[0]
             elif ob_class=='carrier':
                 object=Item(wind.give_table(),coor,size)
                 wind.carrier=object
@@ -57,23 +57,26 @@ def create_window(wind,name):
             object.check_size()
 
 
-def update_buttons(ob1,table, prop):
-    if ob1.interactive==True and ob1.interactive_name=='deleteSelfAddObjectButton':
-        if prop[0]=='rufus':
-            obj=Item(table,ob1.give_coords(),[300,400])
-            obj.animation_name='rufusRake'
-            obj.pic_type=[1,20,12]
-        remove_menu(ob1.parent.parent,ob1.parent)
-        add_object(table,obj)
-    if ob1.interactive==True and ob1.interactive_name=='addWindow':
+def update_buttons(ob1, table, prop):
+    if ob1.interactive == True and ob1.interactive_name =='deleteSelfAddObjectButton':
+        if prop[1] == 'rufus':
+            obj = Item(table, ob1.give_coords(), [300, 400])
+            obj.animation_name = 'rufusRake'
+            obj.pic_type = [1, 20, 12]
+        try:
+            remove_menu(ob1.parent.parent,ob1.parent)
+            add_object(table, obj)
+        except:
+            print('Error: obj referenced before assignment')
+    if ob1.interactive == True and ob1.interactive_name == 'addWindow':
         wind=WindowObj(table)
         ob1.parent.create(wind)
-        wind.parent=ob1.parent
-        create_window(wind,ob1.prop[0])
-    if ob1.interactive==True and ob1.interactive_name=='deleteSelf':
-        remove_menu(ob1.parent.parent,ob1.parent)
-    if ob1.interactive==True and ob1.interactive_name=='setResolution':
-        table.screen = pygame.display.set_mode((int(prop[0]),int(prop[1]))) #creating window object
+        wind.parent = ob1.parent
+        create_window(wind, ob1. prop[1])
+    if ob1.interactive and ob1.interactive_name == 'deleteSelf':
+        remove_menu(ob1.parent.parent, ob1.parent)
+    if ob1.interactive and ob1.interactive_name == 'setResolution':
+        table.screen = pygame.display.set_mode((int(prop[1]), int(prop[2]))) #creating window object
 
 
 
@@ -83,7 +86,6 @@ def add_object(table,object):
 
 def remove_menu(table,ob1):
     #ob1.bondedTo.exterminate()
-    print(table,ob1)
     table.destroy(ob1)
 
 def error_message(info):

@@ -6,6 +6,7 @@ class Object():
         self.size=[10,10]
         self.parent=table
         self.set_snc(coords,size)
+        self.dis_text=None
         self.state = 0
         self.interactive=False
         self.bonded_to=0
@@ -40,7 +41,7 @@ class Object():
     def give_coords(self):
         if self.bonded_to!=0:
             #print(self,' ',self.bondedTo,' ',self.coords[0],'2',self.bondedTo.giveCoords()[0],'3', self.coords[1],'4',self.bondedTo.giveCoords()[1])
-            return [self.coords[0]+self.bonded_to.giveCoords()[0], self.coords[1]+self.bonded_to.giveCoords()[1]]
+            return [self.coords[0]+self.bonded_to.give_coords()[0], self.coords[1]+self.bonded_to.give_coords()[1]]
         else:
             return self.coords
 

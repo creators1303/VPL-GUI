@@ -9,7 +9,7 @@ def main ():
     '''resolution[0]=input('Width')
     resolution[1]=input("Height")'''
     screen = pygame.display.set_mode(resolution) #creating window object
-    pygame.display.set_caption('BeholderJackGui vA.1.1.4') #naming window
+    pygame.display.set_caption('BeholderJackGui vA.1.1.5') #naming window
 
     ##ending program
     menu=MainMenu(screen)

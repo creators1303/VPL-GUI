@@ -17,7 +17,7 @@ class WindowObj(Object):
         #print(self.children)
         for tarObj in self.children:
             tarObj.update()
-            tarObj.update_state(self.table.curFol)
+            tarObj.update_state(self.table.cur_fol)
             update_interactions(self.children, self)
         '''draw_sec_table(self.table.screen, [self])
         draw_sec_table(self.table.screen, self.children)'''

@@ -8,10 +8,12 @@ from data.workers.workerInteractions import update_interactions
 from data.drawer import draw_table
 from data.drawer import draw_sec_table
 
+
 class MainMenu():
     def __init__ (self, screen):
         pygame.mouse.set_visible(False)
         pygame.mouse.get_focused(True)
+        pygame.init()
         music1='testBack.aud'
         music2='testBack2.aud'
         #play_file(music1)
@@ -21,6 +23,7 @@ class MainMenu():
         self.cur_fol=CursorFollower(self)
         self.wind=WindowObj(self)
         self.parent=screen
+        self.myfont = pygame.font.SysFont("monospace", 15)
         create_window(self.wind,'mainMenu')
         self.order=Item(self,[200,100])
         self.chaos=Item(self,[100,100])
@@ -46,18 +49,6 @@ class MainMenu():
         object1.coords=object2.coords
 
     def update(self):
-        '''if event.key == K_UP:
-            if protagonist.step_up(labirynth.mazemap)== 1:
-                whiff_sound.play()
-        elif event.key == K_DOWN:
-            if protagonist.step_down(labirynth.mazemap)== 1:
-                whiff_sound.play()
-        elif event.key == K_LEFT:
-            if protagonist.step_left(labirynth.mazemap)== 1:
-                whiff_sound.play()
-        elif event.key == K_RIGHT:
-            if protagonist.step_right(labirynth.mazemap)== 1:
-                whiff_sound.play()'''
         '''key=pygame.key.name(event.key)
 
         print(key)
@@ -80,7 +71,6 @@ class MainMenu():
                 draw_sec_table(self.screen, [tar_obj])
                 tar_obj.draw_children(self.screen)
                 for child in tar_obj.children:
-                    print(tar_obj, child.children)
                     child.update()
                     child.update_state(self.cur_fol)
                 #print(read_butts())

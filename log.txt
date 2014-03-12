@@ -28,6 +28,12 @@ A.1.1.4
 	_New.
 	_Fixes:
 	Improved code style.
+	_Bugs.
+	
+A.1.1.5
+	_New.
+	_Fixes:
+	Added ability to add text to objects.
 	_Bugs:
 	Can play only one sound at a time.
 	Animation speed depends on performance and not time.
